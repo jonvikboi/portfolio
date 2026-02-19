@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=soft&color=150000&fontColor=F40C3F&text=JONVIKBOI&fontSize=90&height=250&animation=fadeIn&fontAlignY=40" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&weight=900&size=70&duration=3000&pause=500&color=F40C3F&center=true&vCenter=true&width=1000&height=120&lines=JONVIKBOI;SYSTEMS+ENGINEER;EXPERIENCE+DESIGNER" alt="Typing SVG" />
 </p>
 
 # <p align="center">✦ CINEMATIC DIGITAL ENGINEERING ✦</p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=24&duration=2500&pause=1000&color=F40C3F&center=true&vCenter=true&width=600&lines=SHAPING+DIGITAL+BRUTALITY;ENGINEERING+HIGH-STAKES+EXPERIENCES;ARCHITECTURE+BEFORE+AESTHETICS;STRIKING.+EFFICIENT.+CORRECT." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=24&duration=2500&pause=1000&color=F40C3F80&center=true&vCenter=true&width=600&lines=SHAPING+DIGITAL+BRUTALITY;ENGINEERING+HIGH-STAKES+EXPERIENCES;ARCHITECTURE+BEFORE+AESTHETICS;STRIKING.+EFFICIENT.+CORRECT." alt="Typing SVG" />
 </p>
 
 <p align="center">
@@ -54,11 +54,11 @@ Designed with a **Red Identity** aesthetic, this portfolio is a brutalist master
 
 ---
 
-## 📊 SYSTEM METRICS
+## 📊 GITHUB ANALYTICS
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jonvikboi&show_icons=true&theme=highcontrast&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F&hide_border=false" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonvikboi&layout=compact&theme=highcontrast&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F&hide_border=false" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=jonvikboi&show_icons=true&theme=blood&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonvikboi&layout=compact&theme=blood&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F" width="48%" />
 </p>
 
 ---
