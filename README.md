@@ -54,15 +54,6 @@ Designed with a **Red Identity** aesthetic, this portfolio is a brutalist master
 
 ---
 
-## 📊 GITHUB ANALYTICS
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jonvikboi&show_icons=true&theme=blood&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonvikboi&layout=compact&theme=blood&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F" width="48%" />
-</p>
-
----
-
 ## 🚀 INSTALLATION
 
 ```bash
