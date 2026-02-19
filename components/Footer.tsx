@@ -23,9 +23,6 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-16 flex flex-col items-center gap-2">
-                    <p className="font-outfit text-[9px] uppercase tracking-[0.6em] text-foreground/10">
-                        ESTABLISHED 2026 · MADE IN THE VOID
-                    </p>
                     <p className="font-outfit text-[9px] uppercase tracking-[0.6em] text-foreground/5">
                         © 2026 JONVIKBOI · ALL RIGHTS RESERVED
                     </p>

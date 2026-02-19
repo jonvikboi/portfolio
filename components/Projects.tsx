@@ -12,6 +12,7 @@ interface Repository {
     language: string;
     stargazers_count: number;
     displayName: string;
+    image?: string;
 }
 
 const FEATURED_MAP: Record<string, string> = {
@@ -21,6 +22,14 @@ const FEATURED_MAP: Record<string, string> = {
     "recipe-website": "Recipel",
     "mindsake-website": "Mindsake",
     "dbms-project": "Online Shopping System"
+};
+
+const REPO_IMAGES: Record<string, string> = {
+    "UI-UX-Movie-Info-Website": "/bad-guys.png",
+    "Video_Game_Photo_Gallery": "/game.png",
+    "restaurant-delivery-angular": "/restaurant.png",
+    "recipe-website": "/recipel.png",
+    "mindsake-website": "/mindsake.png"
 };
 
 const FALLBACK_IMAGES = [
@@ -52,7 +61,8 @@ export default function Projects() {
                         if (repo) {
                             return {
                                 ...repo,
-                                displayName: FEATURED_MAP[name]
+                                displayName: FEATURED_MAP[name],
+                                image: REPO_IMAGES[name]
                             };
                         }
                         return null;
@@ -135,7 +145,7 @@ export default function Projects() {
                                 {/* Background Layer */}
                                 <div className="absolute inset-0 w-full h-full">
                                     <Image
-                                        src={FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]}
+                                        src={repo.image || FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]}
                                         alt={repo.displayName}
                                         fill
                                         className="object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-40 transition-all duration-1000"

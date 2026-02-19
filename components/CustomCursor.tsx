@@ -12,7 +12,7 @@ export default function CustomCursor() {
 
     // EXTREME LIQUID SPRING: This creates that heavy, organic follow effect when moving rapidly.
     // Lower stiffness + lower damping = more "floaty" / "magnetic" lag.
-    const springConfig = { damping: 20, stiffness: 150, mass: 0.6 };
+    const springConfig = { damping: 25, stiffness: 155, mass: 1.85 };
     const cursorX = useSpring(mouseX, springConfig);
     const cursorY = useSpring(mouseY, springConfig);
 

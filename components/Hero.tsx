@@ -111,7 +111,7 @@ export default function Hero() {
                     <div className="absolute inset-0 bg-primary/30 blur-[40px] rounded-full scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
                     <motion.button
-                        initial={{ paddingLeft: "3rem", paddingRight: "3rem" }}
+                        initial={{ paddingLeft: "3rem", paddingRight: "1rem" }}
                         whileHover={{
                             paddingLeft: "4.5rem",
                             paddingRight: "4.5rem",
