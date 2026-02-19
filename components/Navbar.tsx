@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const NAV_LINKS = [
     { name: "Home", href: "#" },
@@ -14,9 +15,9 @@ const NAV_LINKS = [
 export default function Navbar() {
     const { scrollY } = useScroll();
 
-    // Transform values based on scroll
+    // Transform values based on scroll - THIN profile on scroll, Maximised at top
     const navWidth = useTransform(scrollY, [0, 100], ["100%", "fit-content"]);
-    const navPadding = useTransform(scrollY, [0, 100], ["2rem", "0.5rem"]);
+    const navPadding = useTransform(scrollY, [0, 100], ["0.8rem 6rem", "0.3rem 1.5rem"]);
     const navTop = useTransform(scrollY, [0, 100], ["1.5rem", "1.5rem"]);
     const navBackground = useTransform(
         scrollY,
@@ -29,12 +30,12 @@ export default function Navbar() {
         ["1px solid rgba(244, 12, 63, 0)", "1px solid rgba(244, 12, 63, 0)", "1px solid rgba(244, 12, 63, 0.2)"]
     );
     const navBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(12px)"]);
-    const navGap = useTransform(scrollY, [0, 100], ["4rem", "1.5rem"]);
+    const navGap = useTransform(scrollY, [0, 100], ["6rem", "2rem"]);
 
-    // Logo Specific Transforms
-    const logoOpacity = useTransform(scrollY, [40, 90], [0, 1]);
-    const logoY = useTransform(scrollY, [40, 90], [-20, 0]);
-    const logoScale = useTransform(scrollY, [40, 90], [0.8, 1]);
+    // Logo Specific Transforms - Scaled for high impact at top, slim on scroll
+    const logoOpacity = useTransform(scrollY, [0, 50], [1, 1]);
+    const logoY = useTransform(scrollY, [0, 50], [0, 0]);
+    const logoScale = useTransform(scrollY, [0, 100], [2.2, 0.8]);
 
     const [activeSection, setActiveSection] = useState("");
 
@@ -101,10 +102,15 @@ export default function Navbar() {
                     onClick={(e) => handleLinkClick(e, "#")}
                     className="group relative flex items-center px-6"
                 >
-                    <span className="font-outfit font-black text-2xl md:text-3xl uppercase tracking-tighter text-primary transition-all duration-300 group-hover:scale-110">
-                        JONVIKBOI
-                    </span>
-                    <span className="absolute -bottom-1 left-6 right-6 h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+                    <div className="relative w-40 h-10 md:w-48 md:h-12 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                        <Image
+                            src="/logo.png"
+                            alt="JonVikBoi Logo"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
                 </a>
             </motion.div>
 
