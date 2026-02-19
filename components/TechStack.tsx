@@ -82,7 +82,7 @@ export default function TechStack() {
     const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
         animate(e.currentTarget, {
             scale: 1.05,
-            backgroundColor: "rgba(244, 12, 63, 0.1)",
+            backgroundColor: "rgba(244, 12, 63, 0.2)",
             duration: 300,
             ease: "outQuad"
         });
@@ -91,7 +91,7 @@ export default function TechStack() {
     const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
         animate(e.currentTarget, {
             scale: 1,
-            backgroundColor: "rgba(244, 12, 63, 0)",
+            backgroundColor: "rgba(244, 12, 63, 0.05)",
             duration: 500,
             ease: "outElastic(1, .8)"
         });
@@ -120,7 +120,7 @@ export default function TechStack() {
                                     key={tech.name}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
-                                    className="tech-tag flex items-center gap-4 px-6 py-4 border border-primary/10 bg-transparent transition-colors group cursor-none"
+                                    className="tech-tag flex items-center gap-4 px-6 py-4 border border-primary/20 bg-primary/5 rounded-2xl transition-all group cursor-none"
                                 >
                                     <tech.icon className="w-5 h-5 md:w-6 md:h-6 text-primary/60 group-hover:text-primary transition-colors" />
                                     <span className="text-xl md:text-3xl font-bold font-outfit uppercase tracking-tighter text-foreground/80 group-hover:text-foreground">
@@ -140,7 +140,7 @@ export default function TechStack() {
                                     key={tech.name}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
-                                    className="tech-tag flex items-center gap-4 px-6 py-4 border border-primary/10 bg-transparent transition-colors group cursor-none"
+                                    className="tech-tag flex items-center gap-4 px-6 py-4 border border-primary/20 bg-primary/5 rounded-2xl transition-all group cursor-none"
                                 >
                                     <tech.icon className="w-5 h-5 md:w-6 md:h-6 text-primary/60 group-hover:text-primary transition-colors" />
                                     <span className="text-xl md:text-3xl font-bold font-outfit uppercase tracking-tighter text-foreground/80 group-hover:text-foreground">
