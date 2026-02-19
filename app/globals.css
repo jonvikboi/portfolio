@@ -79,31 +79,32 @@ section {
   background-color: var(--background);
 }
 
-/* Custom Scrollbar Styling */
+/* Custom Scrollbar Styling - Intensified Red Theme */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #0a0000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--burgundy);
-  border-bottom: 2px solid var(--primary);
-  border-radius: 0px;
+  background: linear-gradient(to bottom, var(--burgundy), var(--crimson));
+  border: 1px solid rgba(244, 12, 63, 0.3);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--crimson);
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: var(--primary);
+  background: white;
 }
 
 /* Firefox Support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--burgundy) var(--background);
+  scrollbar-color: var(--crimson) #0a0000;
 }
