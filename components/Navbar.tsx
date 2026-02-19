@@ -20,16 +20,21 @@ export default function Navbar() {
     const navTop = useTransform(scrollY, [0, 100], ["1.5rem", "1.5rem"]);
     const navBackground = useTransform(
         scrollY,
-        [0, 100],
-        ["rgba(21, 0, 0, 0)", "rgba(21, 0, 0, 0.8)"]
+        [0, 50, 100],
+        ["rgba(21, 0, 0, 0)", "rgba(21, 0, 0, 0.4)", "rgba(21, 0, 0, 0.8)"]
     );
     const navBorder = useTransform(
         scrollY,
-        [0, 100],
-        ["none", "1px solid rgba(244, 12, 63, 0.2)"]
+        [0, 95, 100],
+        ["1px solid rgba(244, 12, 63, 0)", "1px solid rgba(244, 12, 63, 0)", "1px solid rgba(244, 12, 63, 0.2)"]
     );
     const navBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(12px)"]);
     const navGap = useTransform(scrollY, [0, 100], ["4rem", "1.5rem"]);
+
+    // Logo Specific Transforms
+    const logoOpacity = useTransform(scrollY, [40, 90], [0, 1]);
+    const logoY = useTransform(scrollY, [40, 90], [-20, 0]);
+    const logoScale = useTransform(scrollY, [40, 90], [0.8, 1]);
 
     const [activeSection, setActiveSection] = useState("");
 
@@ -83,17 +88,25 @@ export default function Navbar() {
                 ))}
             </div>
 
-            {/* Middle Logo */}
-            <a
-                href="#"
-                onClick={(e) => handleLinkClick(e, "#")}
-                className="group relative flex items-center px-6"
+            {/* Middle Logo: Now Animated */}
+            <motion.div
+                style={{
+                    opacity: logoOpacity,
+                    y: logoY,
+                    scale: logoScale,
+                }}
             >
-                <span className="font-outfit font-black text-2xl md:text-3xl uppercase tracking-tighter text-primary transition-all duration-300 group-hover:scale-110">
-                    JONVIKBOI
-                </span>
-                <span className="absolute -bottom-1 left-6 right-6 h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
-            </a>
+                <a
+                    href="#"
+                    onClick={(e) => handleLinkClick(e, "#")}
+                    className="group relative flex items-center px-6"
+                >
+                    <span className="font-outfit font-black text-2xl md:text-3xl uppercase tracking-tighter text-primary transition-all duration-300 group-hover:scale-110">
+                        JONVIKBOI
+                    </span>
+                    <span className="absolute -bottom-1 left-6 right-6 h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+                </a>
+            </motion.div>
 
             {/* Right Links */}
             <div className="hidden lg:flex items-center gap-8">
