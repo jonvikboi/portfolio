@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Antigravity | Premium Portfolio",
+  title: "JonVikBoi | Portfolio",
   description: "A cinematic red-identity portfolio experience.",
 };
 

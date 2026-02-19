@@ -1,4 +1,4 @@
-# <p align="center">✦ ANTIGRAVITY ✦</p>
+# <p align="center">✦ JONVIKBOI | PORTFOLIO ✦</p>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=30&duration=3000&pause=1000&color=F40C3F&center=true&vCenter=true&width=600&lines=I+engineer+experiences.;Architecture+before+aesthetics.;Make+it+striking.+Efficient.+Correct." alt="Typing SVG" />
