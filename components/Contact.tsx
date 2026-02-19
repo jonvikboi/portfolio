@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,6 +9,32 @@ export default function Contact() {
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
     const quoteRef = useRef<HTMLDivElement>(null);
+
+    // MAGNETIC EFFECT LOGIC
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const springConfig = { damping: 20, stiffness: 150, mass: 0.5 };
+    const mouseX = useSpring(x, springConfig);
+    const mouseY = useSpring(y, springConfig);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        const { clientX, clientY, currentTarget } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
+        const dx = clientX - centerX;
+        const dy = clientY - centerY;
+
+        // This is the "pull" strength
+        x.set(dx * 0.35);
+        y.set(dy * 0.35);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -65,10 +91,13 @@ export default function Contact() {
                     <div className="group relative w-full flex justify-center mb-48">
                         <motion.a
                             href="mailto:mistahjzj@gmail.com"
-                            className="relative z-10 inline-block text-2xl md:text-5xl lg:text-7xl font-outfit font-bold uppercase tracking-tighter pb-4 text-center"
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                            style={{ x: mouseX, y: mouseY }}
+                            className="relative z-10 inline-block text-2xl md:text-5xl lg:text-7xl font-outfit font-bold uppercase tracking-tighter pb-4 text-center cursor-none"
                             initial={{ scale: 1 }}
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 15 }}
                         >
                             <span className="relative inline-block text-foreground group-hover:text-primary transition-colors duration-500">
                                 MISTAHJZJ@GMAIL.COM
@@ -78,7 +107,9 @@ export default function Contact() {
                             </span>
                         </motion.a>
 
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+                        <div
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[200%] bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"
+                        />
                     </div>
 
                     <div ref={quoteRef} className="mt-24">
