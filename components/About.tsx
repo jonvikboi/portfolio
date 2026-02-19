@@ -83,7 +83,7 @@ export default function About() {
                                                 Joshua Zachary Jose
                                             </div>
                                             <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.4em] text-primary/60">
-                                                Systems Engineer // B.Tech
+                                                AAI Enthusiast // B.Tech
                                             </div>
                                         </div>
 
@@ -111,7 +111,7 @@ export default function About() {
                                         I’m a B.Tech student who lives and breathes <span className="text-foreground font-medium">systems thinking</span>, performance, and cinematic frontend feels. I spend my time in places where tech depth and visual appeal collide.
                                     </p>
                                     <p>
-                                        My roots are in <span className="text-foreground font-medium">ML, OS, and full-stack</span> development. I’m all about creating high-performance environments using modern React ecosystems and solid design logic.
+                                        My roots are in <span className="text-foreground font-medium">AIML, OS, and full-stack</span> development. I’m all about creating high-performance environments using modern React ecosystems and solid design logic.
                                     </p>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@ export default function About() {
                             {/* Final Rule */}
                             <div className="fade-up pt-40 border-t border-primary/10">
                                 <p className="text-xl md:text-2xl font-outfit font-medium text-foreground italic leading-snug">
-                                    Whether it’s ML, animation, or UI, I build stuff that adheres to one rule:
+                                    Whether it’s AIML, animation, or UI, I build stuff that adheres to one rule:
                                 </p>
                                 <p className="mt-6 text-2xl md:text-4xl lg:text-5xl font-outfit font-black uppercase tracking-tighter text-primary">
                                     Make it striking. Efficient. Correct.
