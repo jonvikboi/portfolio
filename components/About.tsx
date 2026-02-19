@@ -58,7 +58,7 @@ export default function About() {
 
                             {/* PORTRAIT: Comet Card Integration */}
                             <div className="fade-up flex justify-center lg:justify-start lg:pl-20 xl:pl-40 lg:translate-x-8">
-                                <CometCard rotateDepth={15} translateDepth={30}>
+                                <CometCard rotateDepth={8} translateDepth={15}>
                                     <div
                                         className="relative flex w-full max-w-[400px] flex-col items-stretch rounded-[24px] border border-primary/10 bg-[#120002] p-3 md:p-5 transition-colors overflow-hidden"
                                         style={{
@@ -70,9 +70,9 @@ export default function About() {
                                                 loading="lazy"
                                                 className="h-full w-full object-cover saturate-[0.8] contrast-[1.1]"
                                                 alt="Joshua Zachary Jose"
-                                                src="/dev.png"
+                                                src="/dev.jpeg"
                                                 style={{
-                                                    transform: "translateZ(20px)",
+                                                    transform: "translateZ(10px)",
                                                 }}
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
