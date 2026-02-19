@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
-    { name: "Tech Stack", href: "#tech-stack" },
     { name: "Works", href: "#works" },
     { name: "Contact", href: "#contact" },
 ];
@@ -16,7 +15,6 @@ export default function Navbar() {
     const { scrollY } = useScroll();
 
     // Transform values based on scroll
-    // When scrollY is 0, we want it spread out. When scrollY > 100, we want it as a pill.
     const navWidth = useTransform(scrollY, [0, 100], ["100%", "fit-content"]);
     const navPadding = useTransform(scrollY, [0, 100], ["2rem", "0.5rem"]);
     const navTop = useTransform(scrollY, [0, 100], ["1.5rem", "1.5rem"]);
@@ -37,7 +35,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ["about", "tech-stack", "works", "contact"];
+            const sections = ["about", "works", "contact"];
             let current = "";
             for (const section of sections) {
                 const el = document.getElementById(section);
@@ -52,9 +50,17 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const scrollToTop = (e: React.MouseEvent) => {
+    const handleLinkClick = (e: React.MouseEvent, href: string) => {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (href === "#") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            const el = document.querySelector(href);
+            if (el) {
+                const top = el.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({ top, behavior: "smooth" });
+            }
+        }
     };
 
     return (
@@ -73,14 +79,14 @@ export default function Navbar() {
             {/* Left Links */}
             <div className="hidden lg:flex items-center gap-8">
                 {NAV_LINKS.slice(0, 2).map((link) => (
-                    <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} />
+                    <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} onClick={(e) => handleLinkClick(e, link.href)} />
                 ))}
             </div>
 
             {/* Middle Logo */}
             <a
                 href="#"
-                onClick={scrollToTop}
+                onClick={(e) => handleLinkClick(e, "#")}
                 className="group relative flex items-center px-6"
             >
                 <span className="font-outfit font-black text-2xl md:text-3xl uppercase tracking-tighter text-primary transition-all duration-300 group-hover:scale-110">
@@ -92,23 +98,24 @@ export default function Navbar() {
             {/* Right Links */}
             <div className="hidden lg:flex items-center gap-8">
                 {NAV_LINKS.slice(2).map((link) => (
-                    <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} />
+                    <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} onClick={(e) => handleLinkClick(e, link.href)} />
                 ))}
             </div>
 
             {/* Mobile Menu Toggle (Simplified) */}
-            <div className="lg:hidden">
-                <NavLink link={NAV_LINKS[1]} isActive={activeSection === "about"} />
-                <NavLink link={NAV_LINKS[4]} isActive={activeSection === "contact"} />
+            <div className="lg:hidden flex gap-6">
+                <NavLink link={NAV_LINKS[1]} isActive={activeSection === "about"} onClick={(e) => handleLinkClick(e, NAV_LINKS[1].href)} />
+                <NavLink link={NAV_LINKS[3]} isActive={activeSection === "contact"} onClick={(e) => handleLinkClick(e, NAV_LINKS[3].href)} />
             </div>
         </motion.nav>
     );
 }
 
-function NavLink({ link, isActive }: { link: { name: string, href: string }, isActive: boolean }) {
+function NavLink({ link, isActive, onClick }: { link: { name: string, href: string }, isActive: boolean, onClick: (e: React.MouseEvent) => void }) {
     return (
         <a
             href={link.href}
+            onClick={onClick}
             className={cn(
                 "relative font-outfit text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300",
                 isActive ? "text-primary" : "text-primary/60 hover:text-primary"
