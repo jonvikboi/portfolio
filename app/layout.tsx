@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <CustomCursor />
         <SmoothScroll />
+        <Navbar />
         <div className="bg-grain" />
         <div className="bg-gradient-overlay" />
         {children}

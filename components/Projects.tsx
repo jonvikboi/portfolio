@@ -120,7 +120,7 @@ export default function Projects() {
     }, [repos, loading]);
 
     return (
-        <div ref={triggerRef} className="overflow-hidden bg-background">
+        <div ref={triggerRef} id="works" className="overflow-hidden bg-background">
             {loading ? (
                 <div className="h-screen flex items-center justify-center bg-background">
                     <p className="font-outfit text-primary animate-pulse tracking-[0.5em] uppercase text-xs">Accessing Data...</p>
