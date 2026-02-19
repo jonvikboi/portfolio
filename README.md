@@ -1,103 +1,91 @@
-# <p align="center">✦ JONVIKBOI | PORTFOLIO ✦</p>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=soft&color=150000&fontColor=F40C3F&text=JONVIKBOI&fontSize=90&height=250&animation=fadeIn&fontAlignY=40" />
+</p>
+
+# <p align="center">✦ CINEMATIC DIGITAL ENGINEERING ✦</p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=30&duration=3000&pause=1000&color=F40C3F&center=true&vCenter=true&width=600&lines=I+engineer+experiences.;Architecture+before+aesthetics.;Make+it+striking.+Efficient.+Correct." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=24&duration=2500&pause=1000&color=F40C3F&center=true&vCenter=true&width=600&lines=SHAPING+DIGITAL+BRUTALITY;ENGINEERING+HIGH-STAKES+EXPERIENCES;ARCHITECTURE+BEFORE+AESTHETICS;STRIKING.+EFFICIENT.+CORRECT." alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-16.1.6-F40C3F?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-19-F40C3F?style=for-the-badge&logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-F40C3F?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/Framer_Motion-Latest-F40C3F?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  <a href="https://github.com/jonvikboi">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=F40C3F" />
+  </a>
+  <a href="https://github.com/jonvikboi">
+    <img src="https://img.shields.io/badge/Tailwind-000000?style=for-the-badge&logo=tailwind-css&logoColor=F40C3F" />
+  </a>
+  <a href="https://github.com/jonvikboi">
+    <img src="https://img.shields.io/badge/React_19-000000?style=for-the-badge&logo=react&logoColor=F40C3F" />
+  </a>
+  <a href="https://github.com/jonvikboi">
+    <img src="https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=F40C3F" />
+  </a>
 </p>
+
+---
+
+## 🏗️ THE MANIFESTO
+
+> "I don’t just build stuff, I engineer experiences. I live where tech depth and visual appeal collide."
+
+Designed with a **Red Identity** aesthetic, this portfolio is a brutalist masterpiece focused on performance, variable font dynamics, and high-stakes motion.
+
+### ✦ CORE TENETS
+| PHASE | TENET | OBJECTIVE |
+| :--- | :--- | :--- |
+| **01** | **ARCHITECTURE** | Before aesthetics. Structure is the soul. |
+| **02** | **SEPARATION** | Before scale. Logic over bloat. |
+| **03** | **PERFORMANCE** | Before polish. Speed is the standard. |
+| **04** | **REFINEMENT** | Before release. Perfection is the goal. |
+
+---
+
+## ⚡ THE ARSENAL
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,threejs,py,cpp,c,java,mysql,git,linux&theme=dark" />
+</p>
+
+- **Identity Lens:** 3D Comet Cards with magnetic glare using specialized Math logic.
+- **Pressure Dynamics:** Real-time variable font manipulation based on cursor proximity.
+- **Atmospheric Motion:** Liquid-smooth orchestration via Lenis, GSAP, and Anime.js.
+- **Full-Stack Roots:** Deep integration of ML, OS principles, and modern React ecosystems.
+
+---
+
+## 📊 SYSTEM METRICS
 
 <p align="center">
-  <strong>A cinematic, high-performance portfolio experience built with a "Red Identity" aesthetic.</strong>
+  <img src="https://github-readme-stats.vercel.app/api?username=jonvikboi&show_icons=true&theme=highcontrast&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F&hide_border=false" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonvikboi&layout=compact&theme=highcontrast&bg_color=150000&title_color=F40C3F&icon_color=F40C3F&text_color=ffffff&border_color=F40C3F&hide_border=false" width="48%" />
 </p>
 
 ---
 
-## 🏗️ The Engineering Philosophy
+## 🚀 INSTALLATION
 
-> I don’t just build stuff, I engineer experiences.
+```bash
+# Clone the tactical repository
+git clone https://github.com/jonvikboi/portfolio.git
 
-This project is a manifestation of systems thinking, performance-first architecture, and cinematic frontend feels. It bridges the gap between deep technical depth and striking visual appeal.
+# Initialize environment
+npm install
 
-### ✦ Core Tenets
-- **01 Architecture** before aesthetics
-- **02 Separation** before scale
-- **03 Performance** before polish
-- **04 Refinement** before release
-
----
-
-## ⚡ Key Features
-
-- **Interactive Text Pressure**: A custom variable font system that responds to cursor proximity.
-- **Identity Lens**: Specialized Comet Cards with 3D tilt effects and dynamic glare.
-- **Cinematic Motion**: High-performance animations powered by Anime.js, GSAP, and Framer Motion.
-- **Smooth Navigation**: Ultra-fluid scrolling experience using Lenis.
-- **Technical Grid**: A brutalist design system rooted in engineering principles.
+# Boot internal systems
+npm run dev
+```
 
 ---
 
-## 🛠️ The Tech Stack
-
-### Frontend & UI
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS v4
-- **Interactive Fonts:** Variable Font "Compressa VF"
-- **3D & Canvas:** Three.js / R3F (Scene integration)
-
-### Animation Ecosystem
-- **Physics & Spring:** Framer Motion
-- **Staggered Reveals:** Anime.js
-- **Scroll Orchestration:** GSAP ScrollTrigger
-- **Smooth Scroll:** Lenis
-
----
-
-## 🚀 Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/jonvikboi/portfolio.git
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
----
-
-## 🌑 Aesthetic Guidelines
-
-The project adheres to a specific "Red Identity" color palette:
-- **Background:** `#150000` (Deep Black-Red)
-- **Primary:** `#F40C3F` (Cinematic Red)
-- **Accents:** `#E50B3B`, `#6E0419`
-
----
-
-## 👤 Author
+## 👤 COMMANDER
 
 **Joshua Zachary Jose**  
 *Systems Engineer // B.Tech Student*
 
 <p align="left">
   <a href="https://github.com/jonvikboi">
-    <img src="https://img.shields.io/badge/GitHub-Joshua-F40C3F?style=flat-square&logo=github" alt="GitHub" />
+    <img src="https://img.shields.io/badge/ACCESS_IDENTITY-JOSHUA-F40C3F?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
 
