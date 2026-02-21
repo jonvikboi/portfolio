@@ -39,7 +39,7 @@ const REPO_LIVE_URLS: Record<string, string> = {
     "Video_Game_Photo_Gallery": "https://gameography.live",
     "restaurant-delivery-angular": "https://restaurant-delivery-angular.vercel.app",
     "recipe-website": "https://recipe-website-peach.vercel.app",
-    "mindsake-website": "https://mindsake-vercel.vercel.app",
+    "mindsake-website": "https://mindsake-website.vercel.app",
     "dbms-project": "https://cart-managment-system.vercel.app/"
 };
 
