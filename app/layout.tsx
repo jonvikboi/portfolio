@@ -21,6 +21,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "JonVikBoi | Portfolio",
   description: "A cinematic red-identity portfolio experience.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
