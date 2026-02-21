@@ -19,8 +19,8 @@ interface Repository {
 
 const FEATURED_MAP: Record<string, string> = {
     "UI-UX-Movie-Info-Website": "The Bad Guys Movie Info",
-    "Video_Game_Photo_Gallery": "Video Games Pic Gallery",
-    "restaurant-delivery-angular": "Restaurant Order and Delivery",
+    "Video_Game_Photo_Gallery": "Gameography",
+    "restaurant-delivery-angular": "Angular Restaurant App",
     "recipe-website": "Recipel",
     "mindsake-website": "Mindsake",
     "dbms-project": "Online Shopping System"
@@ -41,6 +41,15 @@ const REPO_LIVE_URLS: Record<string, string> = {
     "recipe-website": "https://recipe-website-peach.vercel.app",
     "mindsake-website": "https://mindsake-website.vercel.app",
     "dbms-project": "https://cart-managment-system.vercel.app/"
+};
+
+const REPO_DESCRIPTIONS: Record<string, string> = {
+    "UI-UX-Movie-Info-Website": "Cinematic storytelling and immersive UI/UX.",
+    "Video_Game_Photo_Gallery": "A visual archive of legendary games.",
+    "restaurant-delivery-angular": "Full-stack digital dining and logistics.",
+    "recipe-website": "Modern culinary discovery and exploration.",
+    "mindsake-website": "Premium digital wellness and clinical UI.",
+    "dbms-project": "Robust e-commerce architecture at scale."
 };
 
 const FALLBACK_IMAGES = [
@@ -73,6 +82,7 @@ export default function Projects() {
                             return {
                                 ...repo,
                                 displayName: FEATURED_MAP[name],
+                                description: REPO_DESCRIPTIONS[name] || repo.description,
                                 image: REPO_IMAGES[name],
                                 liveUrl: REPO_LIVE_URLS[name]
                             };
