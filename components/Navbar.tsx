@@ -71,6 +71,13 @@ export default function Navbar() {
 
     return (
         <motion.nav
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1], // Custom cinematic easing
+                delay: 0.2
+            }}
             style={{
                 width: navWidth,
                 padding: navPadding,
