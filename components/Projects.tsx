@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface Repository {
@@ -13,6 +14,7 @@ interface Repository {
     stargazers_count: number;
     displayName: string;
     image?: string;
+    liveUrl?: string;
 }
 
 const FEATURED_MAP: Record<string, string> = {
@@ -30,6 +32,15 @@ const REPO_IMAGES: Record<string, string> = {
     "restaurant-delivery-angular": "/restaurant.png",
     "recipe-website": "/recipel.png",
     "mindsake-website": "/mindsake.png"
+};
+
+const REPO_LIVE_URLS: Record<string, string> = {
+    "UI-UX-Movie-Info-Website": "https://jonvikboi.github.io/UI-UX-Movie-Info-Website/",
+    "Video_Game_Photo_Gallery": "https://gameography.live",
+    "restaurant-delivery-angular": "https://restaurant-delivery-angular.vercel.app",
+    "recipe-website": "https://recipe-website-peach.vercel.app",
+    "mindsake-website": "https://mindsake-vercel.vercel.app",
+    "dbms-project": "https://cart-managment-system.vercel.app/"
 };
 
 const FALLBACK_IMAGES = [
@@ -62,7 +73,8 @@ export default function Projects() {
                             return {
                                 ...repo,
                                 displayName: FEATURED_MAP[name],
-                                image: REPO_IMAGES[name]
+                                image: REPO_IMAGES[name],
+                                liveUrl: REPO_LIVE_URLS[name]
                             };
                         }
                         return null;
@@ -163,9 +175,42 @@ export default function Projects() {
                                     <h3 className="text-4xl md:text-7xl lg:text-9xl font-black font-outfit text-foreground leading-[0.85] tracking-tighter uppercase break-words max-w-5xl">
                                         {repo.displayName}
                                     </h3>
-                                    <p className="mt-8 text-foreground/40 font-inter font-light text-sm md:text-xl max-w-xl line-clamp-2 uppercase tracking-wide">
+                                    <p className="mt-8 text-foreground/40 font-inter font-light text-sm md:text-xl max-w-xl line-clamp-2 uppercase tracking-wide mb-12">
                                         {repo.description || "Experimental digital architecture and creative engineering."}
                                     </p>
+
+                                    {/* Launch Button: Hero Style */}
+                                    <motion.button
+                                        initial={{ paddingLeft: "1.5rem", paddingRight: "1rem" }}
+                                        whileHover={{
+                                            paddingLeft: "2.5rem",
+                                            paddingRight: "2.5rem",
+                                        }}
+                                        whileTap={{ scale: 0.96 }}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            if (repo.liveUrl) window.open(repo.liveUrl, "_blank");
+                                        }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 450,
+                                            damping: 30,
+                                            mass: 0.8
+                                        }}
+                                        className="group relative h-12 md:h-16 bg-primary/5 border border-primary/20 text-primary font-playfair font-black italic uppercase tracking-[0.1em] text-sm md:text-lg rounded-full overflow-hidden transition-colors duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(244,12,63,0.3)] flex items-center justify-center cursor-none"
+                                    >
+                                        <span className="relative z-10 transition-colors duration-500 group-hover:text-background flex items-center gap-6">
+                                            Launch
+                                            <span className="inline-block transform transition-transform duration-500 group-hover:translate-x-2">
+                                                <svg className="w-5 h-5 md:w-6 md:h-6 text-primary group-hover:text-background transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        {/* Swipe Effect Layer */}
+                                        <div className="absolute inset-0 bg-primary translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]" />
+                                    </motion.button>
                                 </div>
 
                                 {/* Interactive Number */}
