@@ -82,19 +82,19 @@ export default function Contact() {
 
                     <h2
                         ref={headingRef}
-                        className="text-center w-full text-5xl md:text-[10vw] font-black font-outfit uppercase tracking-tighter leading-[0.9] mb-24 text-foreground"
+                        className="text-center w-full text-5xl md:text-[10vw] font-black font-outfit uppercase tracking-tighter leading-[0.9] mb-16 md:mb-24 text-foreground"
                     >
                         START A <br />
                         <span className="text-primary italic block md:inline">REVOLUTION.</span>
                     </h2>
 
-                    <div className="group relative w-full flex justify-center mb-48">
+                    <div className="group relative w-full flex justify-center mb-32 md:mb-48 px-4">
                         <motion.a
                             href="mailto:mistahjzj@gmail.com"
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                             style={{ x: mouseX, y: mouseY }}
-                            className="relative z-10 inline-block text-2xl md:text-5xl lg:text-7xl font-outfit font-bold uppercase tracking-tighter pb-4 text-center cursor-none"
+                            className="relative z-10 inline-block text-xl md:text-5xl lg:text-7xl font-outfit font-bold uppercase tracking-tighter pb-4 text-center cursor-none break-all"
                             initial={{ scale: 1 }}
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 400, damping: 15 }}
@@ -112,8 +112,8 @@ export default function Contact() {
                         />
                     </div>
 
-                    <div ref={quoteRef} className="mt-24">
-                        <p className="text-xl md:text-3xl font-outfit font-light italic tracking-widest text-foreground/30 text-center">
+                    <div ref={quoteRef} className="mt-12 md:mt-24">
+                        <p className="text-lg md:text-3xl font-outfit font-light italic tracking-widest text-foreground/30 text-center">
                             "Choices have consequences."
                         </p>
                         <p className="mt-6 text-[10px] uppercase tracking-[0.8em] text-primary/60 font-black">

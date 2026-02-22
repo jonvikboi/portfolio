@@ -82,7 +82,7 @@ export default function Hero() {
                 {/* Text Pressure Title */}
                 <div
                     ref={titleContainerRef}
-                    className="w-full h-[120px] md:h-[180px] lg:h-[220px] mb-12 opacity-0"
+                    className="w-full h-[120px] md:h-[180px] lg:h-[220px] mb-8 md:mb-12 opacity-0"
                 >
                     <TextPressure
                         text="JONVIKBOI"
@@ -93,25 +93,26 @@ export default function Hero() {
                         weight={true}
                         italic={true}
                         textColor="#F40C3F"
-                        minFontSize={48}
+                        minFontSize={32}
                         className="font-outfit font-black"
                     />
                 </div>
 
                 <p
                     ref={subtitleRef}
-                    className="text-lg md:text-xl lg:text-2xl text-foreground/60 max-w-2xl mx-auto font-inter font-light tracking-[0.05em] leading-relaxed opacity-0"
+                    className="text-base md:text-xl lg:text-2xl text-foreground/60 max-w-[90vw] md:max-w-2xl mx-auto font-inter font-light tracking-[0.05em] leading-relaxed opacity-0"
                 >
                     Shaping digital brutality into cinematic experiences.
-                    <span className="block mt-2 font-medium text-foreground/40 text-sm md:text-base uppercase tracking-[0.2em]">Designing the edge of what's possible.</span>
+                    <span className="block mt-2 font-medium text-foreground/40 text-xs md:text-base uppercase tracking-[0.2em]">Designing the edge of what's possible.</span>
                 </p>
 
-                <div ref={ctaRef} className="mt-20 opacity-0 relative group">
+                <div ref={ctaRef} className="mt-16 md:mt-20 opacity-0 relative group">
                     {/* Extra Outer Glow */}
                     <div className="absolute inset-0 bg-primary/30 blur-[40px] rounded-full scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
                     <motion.button
-                        initial={{ paddingLeft: "3rem", paddingRight: "1rem" }}
+                        initial={{ paddingLeft: "1.5rem", paddingRight: "1.5rem" }}
+                        animate={{ paddingLeft: "3rem", paddingRight: "1rem" }}
                         whileHover={{
                             paddingLeft: "4.5rem",
                             paddingRight: "4.5rem",
@@ -127,12 +128,12 @@ export default function Hero() {
                             damping: 30,
                             mass: 0.8
                         }}
-                        className="group relative py-6 md:py-8 bg-primary/5 border-2 border-primary/20 text-primary font-playfair font-black italic uppercase tracking-[0.1em] text-lg md:text-2xl rounded-full overflow-hidden transition-colors duration-300 hover:border-primary/60 hover:shadow-[0_0_50px_rgba(244,12,63,0.4)] flex items-center justify-center"
+                        className="group relative py-5 md:py-8 bg-primary/5 border-2 border-primary/20 text-primary font-playfair font-black italic uppercase tracking-[0.1em] text-base md:text-2xl rounded-full overflow-hidden transition-colors duration-300 hover:border-primary/60 hover:shadow-[0_0_50px_rgba(244,12,63,0.4)] flex items-center justify-center min-w-[200px]"
                     >
-                        <span className="relative z-10 transition-colors duration-500 group-hover:text-background flex items-center gap-10">
+                        <span className="relative z-10 transition-colors duration-500 group-hover:text-background flex items-center gap-6 md:gap-10">
                             Explore
                             <span className="inline-block transform transition-transform duration-500 group-hover:translate-x-4">
-                                <svg className="w-8 h-8 md:w-10 md:h-10 text-primary group-hover:text-background transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className="w-6 h-6 md:w-10 md:h-10 text-primary group-hover:text-background transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </span>

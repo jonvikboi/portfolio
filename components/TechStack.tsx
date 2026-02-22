@@ -105,25 +105,25 @@ export default function TechStack() {
             <div className="container mx-auto px-6 relative z-10 w-full flex flex-col items-center">
                 <h2
                     ref={headingRef}
-                    className="text-5xl md:text-8xl font-black font-outfit uppercase tracking-tighter text-primary mb-32 text-center"
+                    className="text-5xl md:text-8xl font-black font-outfit uppercase tracking-tighter text-primary mb-20 md:mb-32 text-center"
                 >
                     THE ARSENAL
                 </h2>
 
-                <div ref={containerRef} className="w-full max-w-6xl space-y-48">
+                <div ref={containerRef} className="w-full max-w-6xl space-y-24 md:space-y-48">
                     {/* Web Stack */}
                     <div className="stack-group flex flex-col items-center">
-                        <h3 className="text-sm md:text-lg uppercase tracking-[0.5em] text-primary/60 font-black mb-24 text-center">Development Stack</h3>
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-8 cursor-none">
+                        <h3 className="text-[10px] md:text-lg uppercase tracking-[0.5em] text-primary/60 font-black mb-12 md:mb-24 text-center">Development Stack</h3>
+                        <div className="flex flex-wrap justify-center gap-3 md:gap-8 cursor-none">
                             {WEB_STACK.map((tech) => (
                                 <div
                                     key={tech.name}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
-                                    className="tech-tag flex items-center gap-4 px-20 py-4 border border-primary/20 bg-primary/5 rounded-2xl transition-all group cursor-none"
+                                    className="tech-tag flex items-center gap-3 md:gap-4 px-6 md:px-20 py-3 md:py-4 border border-primary/20 bg-primary/5 rounded-xl md:rounded-2xl transition-all group cursor-none"
                                 >
-                                    <tech.icon className="w-5 h-5 md:w-6 md:h-6 text-primary/60 group-hover:text-primary transition-colors" />
-                                    <span className="text-xl md:text-3xl font-bold font-outfit uppercase tracking-tighter text-foreground/80 group-hover:text-foreground">
+                                    <tech.icon className="w-4 h-4 md:w-6 md:h-6 text-primary/60 group-hover:text-primary transition-colors" />
+                                    <span className="text-lg md:text-3xl font-bold font-outfit uppercase tracking-tighter text-foreground/80 group-hover:text-foreground">
                                         {tech.name}
                                     </span>
                                 </div>
@@ -133,17 +133,17 @@ export default function TechStack() {
 
                     {/* Coding Stack */}
                     <div className="stack-group flex flex-col items-center">
-                        <h3 className="text-sm md:text-lg uppercase tracking-[0.5em] text-primary/60 font-black mb-24 text-center">Coding Stack</h3>
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-8 cursor-none">
+                        <h3 className="text-[10px] md:text-lg uppercase tracking-[0.5em] text-primary/60 font-black mb-12 md:mb-24 text-center">Coding Stack</h3>
+                        <div className="flex flex-wrap justify-center gap-3 md:gap-8 cursor-none">
                             {CODING_STACK.map((tech) => (
                                 <div
                                     key={tech.name}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
-                                    className="tech-tag flex items-center gap-4 px-20 py-4 border border-primary/20 bg-primary/5 rounded-2xl transition-all group cursor-none"
+                                    className="tech-tag flex items-center gap-3 md:gap-4 px-6 md:px-20 py-3 md:py-4 border border-primary/20 bg-primary/5 rounded-xl md:rounded-2xl transition-all group cursor-none"
                                 >
-                                    <tech.icon className="w-5 h-5 md:w-6 md:h-6 text-primary/60 group-hover:text-primary transition-colors" />
-                                    <span className="text-xl md:text-3xl font-bold font-outfit uppercase tracking-tighter text-foreground/80 group-hover:text-foreground">
+                                    <tech.icon className="w-4 h-4 md:w-6 md:h-6 text-primary/60 group-hover:text-primary transition-colors" />
+                                    <span className="text-lg md:text-3xl font-bold font-outfit uppercase tracking-tighter text-foreground/80 group-hover:text-foreground">
                                         {tech.name}
                                     </span>
                                 </div>

@@ -178,20 +178,20 @@ export default function Projects() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
 
                                 {/* Info Container */}
-                                <div className="absolute bottom-16 left-12 right-12 z-20">
-                                    <p className="text-primary font-outfit font-bold tracking-[0.4em] uppercase mb-4 text-[10px]">
+                                <div className="absolute bottom-10 md:bottom-16 left-8 md:left-12 right-8 md:right-12 z-20">
+                                    <p className="text-primary font-outfit font-bold tracking-[0.4em] uppercase mb-3 md:mb-4 text-[8px] md:text-[10px]">
                                         {repo.language || "Open Source"} // CREATIVE REPOSITORY
                                     </p>
-                                    <h3 className="text-4xl md:text-7xl lg:text-9xl font-black font-outfit text-foreground leading-[0.85] tracking-tighter uppercase break-words max-w-5xl">
+                                    <h3 className="text-5xl md:text-7xl lg:text-9xl font-black font-outfit text-foreground leading-[0.85] tracking-tighter uppercase break-words max-w-5xl">
                                         {repo.displayName}
                                     </h3>
-                                    <p className="mt-8 text-foreground/40 font-inter font-light text-sm md:text-xl max-w-xl line-clamp-2 uppercase tracking-wide mb-12">
+                                    <p className="mt-6 md:mt-8 text-foreground/40 font-inter font-light text-xs md:text-xl max-w-xl line-clamp-2 uppercase tracking-wide mb-8 md:mb-12">
                                         {repo.description || "Experimental digital architecture and creative engineering."}
                                     </p>
 
                                     {/* Launch Button: Hero Style */}
                                     <motion.button
-                                        initial={{ paddingLeft: "1.5rem", paddingRight: "1rem" }}
+                                        initial={{ paddingLeft: "1.25rem", paddingRight: "0.75rem" }}
                                         whileHover={{
                                             paddingLeft: "2.5rem",
                                             paddingRight: "2.5rem",
@@ -208,12 +208,12 @@ export default function Projects() {
                                             damping: 30,
                                             mass: 0.8
                                         }}
-                                        className="group relative h-12 md:h-16 bg-primary/5 border border-primary/20 text-primary font-playfair font-black italic uppercase tracking-[0.1em] text-sm md:text-lg rounded-full overflow-hidden transition-colors duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(244,12,63,0.3)] flex items-center justify-center cursor-none"
+                                        className="group relative h-10 md:h-16 bg-primary/5 border border-primary/20 text-primary font-playfair font-black italic uppercase tracking-[0.1em] text-xs md:text-lg rounded-full overflow-hidden transition-colors duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(244,12,63,0.3)] flex items-center justify-center cursor-none px-6"
                                     >
-                                        <span className="relative z-10 transition-colors duration-500 group-hover:text-background flex items-center gap-6">
+                                        <span className="relative z-10 transition-colors duration-500 group-hover:text-background flex items-center gap-4 md:gap-6">
                                             Launch
                                             <span className="inline-block transform transition-transform duration-500 group-hover:translate-x-2">
-                                                <svg className="w-5 h-5 md:w-6 md:h-6 text-primary group-hover:text-background transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <svg className="w-4 h-4 md:w-6 md:h-6 text-primary group-hover:text-background transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>
                                             </span>
@@ -224,8 +224,8 @@ export default function Projects() {
                                 </div>
 
                                 {/* Interactive Number */}
-                                <div className="absolute top-12 right-12 z-20">
-                                    <span className="font-outfit text-white/5 text-9xl font-black leading-none uppercase">
+                                <div className="absolute top-8 md:top-12 right-8 md:right-12 z-20">
+                                    <span className="font-outfit text-white/5 text-7xl md:text-9xl font-black leading-none uppercase">
                                         0{index + 1}
                                     </span>
                                 </div>

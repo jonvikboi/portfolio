@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
     { name: "Home", href: "#" },
@@ -14,11 +15,14 @@ const NAV_LINKS = [
 
 export default function Navbar() {
     const { scrollY } = useScroll();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // Transform values based on scroll - THIN profile on scroll, Maximised at top
     const navWidth = useTransform(scrollY, [0, 100], ["100%", "fit-content"]);
     const navPadding = useTransform(scrollY, [0, 100], ["0.8rem 6rem", "0.3rem 1.5rem"]);
     const navTop = useTransform(scrollY, [0, 100], ["1.5rem", "1.5rem"]);
+
+    // Background and blur transforms
     const navBackground = useTransform(
         scrollY,
         [0, 50, 100],
@@ -58,6 +62,7 @@ export default function Navbar() {
 
     const handleLinkClick = (e: React.MouseEvent, href: string) => {
         e.preventDefault();
+        setIsMenuOpen(false); // Close menu on click
         if (href === "#") {
             window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
@@ -70,70 +75,133 @@ export default function Navbar() {
     };
 
     return (
-        <motion.nav
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-                duration: 1.2,
-                ease: [0.22, 1, 0.36, 1], // Custom cinematic easing
-                delay: 0.2
-            }}
-            style={{
-                width: navWidth,
-                padding: navPadding,
-                top: navTop,
-                backgroundColor: navBackground,
-                border: navBorder,
-                backdropFilter: navBlur,
-                gap: navGap,
-            }}
-            className="fixed left-1/2 -translate-x-1/2 z-[100] flex items-center justify-center rounded-full transition-all duration-500 ease-out pointer-events-auto"
-        >
-            {/* Left Links */}
-            <div className="hidden lg:flex items-center gap-8">
-                {NAV_LINKS.slice(0, 2).map((link) => (
-                    <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} onClick={(e) => handleLinkClick(e, link.href)} />
-                ))}
-            </div>
-
-            {/* Middle Logo: Now Animated */}
-            <motion.div
-                style={{
-                    opacity: logoOpacity,
-                    y: logoY,
-                    scale: logoScale,
+        <>
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: 0.2
                 }}
+                style={{
+                    width: navWidth,
+                    padding: navPadding,
+                    top: navTop,
+                    backgroundColor: navBackground,
+                    border: navBorder,
+                    backdropFilter: navBlur,
+                    gap: navGap,
+                }}
+                className="fixed left-1/2 -translate-x-1/2 z-[100] flex items-center justify-between lg:justify-center rounded-full transition-all duration-500 ease-out pointer-events-auto max-w-[95vw]"
             >
-                <a
-                    href="#"
-                    onClick={(e) => handleLinkClick(e, "#")}
-                    className="group relative flex items-center px-6"
+                {/* Mobile Logo: Always Visible Leftish */}
+                <div className="lg:hidden flex items-center pl-4">
+                    <a href="#" onClick={(e) => handleLinkClick(e, "#")} className="relative w-44 h-14">
+                        <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
+                    </a>
+                </div>
+
+                {/* Desktop Left Links */}
+                <div className="hidden lg:flex items-center gap-8">
+                    {NAV_LINKS.slice(0, 2).map((link) => (
+                        <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} onClick={(e) => handleLinkClick(e, link.href)} />
+                    ))}
+                </div>
+
+                {/* Desktop Middle Logo */}
+                <motion.div
+                    className="hidden lg:block relative"
+                    style={{
+                        opacity: logoOpacity,
+                        y: logoY,
+                        scale: logoScale,
+                    }}
                 >
-                    <div className="relative w-40 h-10 md:w-48 md:h-12 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
-                        <Image
-                            src="/logo.png"
-                            alt="JonVikBoi Logo"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
-                    </div>
-                </a>
-            </motion.div>
+                    <a
+                        href="#"
+                        onClick={(e) => handleLinkClick(e, "#")}
+                        className="group relative flex items-center px-6"
+                    >
+                        <div className="relative w-40 h-10 md:w-48 md:h-12 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                            <Image src="/logo.png" alt="JonVikBoi Logo" fill className="object-contain" priority />
+                        </div>
+                    </a>
+                </motion.div>
 
-            {/* Right Links */}
-            <div className="hidden lg:flex items-center gap-8">
-                {NAV_LINKS.slice(2).map((link) => (
-                    <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} onClick={(e) => handleLinkClick(e, link.href)} />
-                ))}
-            </div>
+                {/* Desktop Right Links */}
+                <div className="hidden lg:flex items-center gap-8">
+                    {NAV_LINKS.slice(2).map((link) => (
+                        <NavLink link={link} key={link.name} isActive={activeSection === link.href.replace("#", "")} onClick={(e) => handleLinkClick(e, link.href)} />
+                    ))}
+                </div>
 
-            {/* Mobile Menu Toggle (Simplified) */}
-            <div className="lg:hidden flex gap-6">
-                <NavLink link={NAV_LINKS[1]} isActive={activeSection === "about"} onClick={(e) => handleLinkClick(e, NAV_LINKS[1].href)} />
-                <NavLink link={NAV_LINKS[3]} isActive={activeSection === "contact"} onClick={(e) => handleLinkClick(e, NAV_LINKS[3].href)} />
-            </div>
-        </motion.nav>
+                {/* Mobile Toggle Button */}
+                <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="lg:hidden p-2 pr-4 text-primary transition-transform active:scale-90"
+                    aria-label="Toggle Menu"
+                >
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </motion.nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, x: "100%" }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: "100%" }}
+                        transition={{ type: "spring", damping: 30, stiffness: 250 }}
+                        className="fixed inset-0 z-[110] bg-background/98 backdrop-blur-3xl lg:hidden flex flex-col items-center justify-center"
+                    >
+                        <button
+                            onClick={() => setIsMenuOpen(false)}
+                            className="absolute top-10 right-10 text-primary border border-primary/20 p-4 rounded-full transition-transform active:scale-90"
+                        >
+                            <X size={32} />
+                        </button>
+
+                        <div className="flex flex-col items-center gap-14">
+                            {NAV_LINKS.map((link, i) => (
+                                <motion.a
+                                    key={link.name}
+                                    initial={{ opacity: 0, skewX: 0, scale: 1 }}
+                                    animate={{ opacity: 1, skewX: 0, scale: 1 }}
+                                    whileHover={{
+                                        scale: 1.1,
+                                        color: "#F40C3F",
+                                        letterSpacing: "0.1em",
+                                        skewX: -12
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{ originX: 0.5 }}
+                                    transition={{
+                                        opacity: { duration: 0.6, delay: i * 0.1 },
+                                        default: { type: "spring", stiffness: 250, damping: 25, mass: 0.5 }
+                                    }}
+                                    href={link.href}
+                                    onClick={(e) => handleLinkClick(e, link.href)}
+                                    className={cn(
+                                        "text-4xl md:text-5xl font-black font-outfit uppercase tracking-tighter",
+                                        activeSection === link.href.replace("#", "") ? "text-primary" : "text-foreground/80"
+                                    )}
+                                >
+                                    {link.name}
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        <div className="absolute bottom-12 text-center">
+                            <p className="text-[10px] uppercase tracking-[0.6em] text-primary/40 font-black">
+                                JonVikBoi // Systems Engineer
+                            </p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 }
 
