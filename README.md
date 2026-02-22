@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&weight=900&size=70&duration=3000&pause=500&color=F40C3F&center=true&vCenter=true&width=1000&height=120&lines=JONVIKBOI;SYSTEMS+ENGINEER;EXPERIENCE+DESIGNER" alt="Typing SVG" />
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=310&color=F40C3F&text=JonVikBoi&fontColor=FFFFFF&fontAlign=50&rotate=-2&fontAlignY=55&strokeWidth=3&stroke=000000&desc=B.Tech%20✦%20AI%20Enthusiast&descSize=25&descAlign=50&descAlignY=63" alt="Capsule Render" />
 </p>
 
-# <p align="center">✦ CINEMATIC DIGITAL ENGINEERING ✦</p>
+# <p align="center">✦ CINEMATIC DIGITAL ENGINEERING PORTFOLIO ✦</p>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=24&duration=2500&pause=1000&color=F40C3F80&center=true&vCenter=true&width=600&lines=SHAPING+DIGITAL+BRUTALITY;ENGINEERING+HIGH-STAKES+EXPERIENCES;ARCHITECTURE+BEFORE+AESTHETICS;STRIKING.+EFFICIENT.+CORRECT." alt="Typing SVG" />
@@ -72,7 +72,7 @@ npm run dev
 ## 👤 COMMANDER
 
 **Joshua Zachary Jose**  
-*Systems Engineer // B.Tech Student*
+*AI Enthusiast // B.Tech Student*
 
 <p align="left">
   <a href="https://github.com/jonvikboi">
