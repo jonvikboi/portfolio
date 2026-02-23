@@ -23,7 +23,6 @@ export default function Hero() {
         if (titleContainerRef.current) {
             animate(titleContainerRef.current, {
                 opacity: [0, 1],
-                y: [50, 0],
                 duration: 1500,
                 ease: "outExpo"
             });

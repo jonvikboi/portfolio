@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import { motion } from 'framer-motion';
 
 interface TextPressureProps {
     text?: string;
@@ -187,7 +188,6 @@ const TextPressure: React.FC<TextPressureProps> = ({
         }
         .text-pressure-title span {
           display: inline-block;
-          transition: transform 0.1s ease-out;
         }
         .stroke span {
           position: relative;
@@ -227,16 +227,23 @@ const TextPressure: React.FC<TextPressureProps> = ({
                 }}
             >
                 {chars.map((char, i) => (
-                    <span
+                    <motion.span
                         key={i}
                         ref={el => {
-                            spansRef.current[i] = el;
+                            spansRef.current[i] = el as HTMLSpanElement;
+                        }}
+                        initial={{ opacity: 0, y: 80 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 1.2,
+                            delay: i * 0.08,
+                            ease: [0.22, 1, 0.36, 1]
                         }}
                         data-char={char}
                         className="inline-block"
                     >
                         {char}
-                    </span>
+                    </motion.span>
                 ))}
             </h1>
         </div>
