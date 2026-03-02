@@ -3,7 +3,7 @@
 :root {
   --background: #150000;
   --foreground: #ffffff;
-  --primary: #F40C3F;
+  --primary: #f40c3f;
   --secondary: #E50B3B;
   --crimson: #6E0419;
   --burgundy: #310108;
@@ -16,6 +16,16 @@
   --color-burgundy: var(--burgundy);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+}
+
+::selection {
+  background-color: var(--primary);
+  color: #ffa8bb;
+}
+
+::-moz-selection {
+  background-color: var(--primary);
+  color: #ffa8bb;
 }
 
 .bg-grain {
