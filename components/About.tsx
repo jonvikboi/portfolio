@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CometCard } from "./ui/comet-card";
+import Lanyard from "./Lanyard";
 
 export default function About() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -56,43 +56,9 @@ export default function About() {
                                 <div className="mt-6 md:mt-8 h-[2px] w-16 md:w-24 bg-primary/40 mx-auto xl:mx-0" />
                             </div>
 
-                            {/* PORTRAIT: Comet Card Integration */}
-                            <div className="fade-up flex justify-center lg:pl-0 xl:pl-40 lg:translate-x-0 xl:translate-x-8 w-full max-w-[320px] md:max-w-[400px]">
-                                <CometCard rotateDepth={8} translateDepth={15}>
-                                    <div
-                                        className="relative flex w-full flex-col items-stretch rounded-[24px] border border-primary/10 bg-[#120002] p-3 md:p-5 transition-colors overflow-hidden"
-                                        style={{
-                                            transformStyle: "preserve-3d",
-                                        }}
-                                    >
-                                        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[18px]">
-                                            <img
-                                                loading="lazy"
-                                                className="h-full w-full object-cover saturate-[0.8] contrast-[1.1]"
-                                                alt="Joshua Zachary Jose"
-                                                src="/dev.jpeg"
-                                                style={{
-                                                    transform: "translateZ(10px)",
-                                                }}
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                                        </div>
-
-                                        <div className="mt-6 flex flex-col p-2 text-left" style={{ transform: "translateZ(40px)" }}>
-                                            <div className="font-outfit text-xl md:text-2xl font-black uppercase tracking-tighter text-white">
-                                                Joshua Zachary Jose
-                                            </div>
-                                            <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.4em] text-primary/60">
-                                                AAI Enthusiast // B.Tech
-                                            </div>
-                                        </div>
-
-                                        {/* Corner Decoration */}
-                                        <div className="absolute top-0 right-0 p-6 opacity-20 h-full w-full pointer-events-none flex items-start justify-end">
-                                            <div className="h-12 w-12 border-t-2 border-r-2 border-primary/40 rounded-tr-xl" />
-                                        </div>
-                                    </div>
-                                </CometCard>
+                            {/* PORTRAIT: 3D Interactable Lanyard */}
+                            <div className="fade-up flex justify-center w-full min-h-[500px] md:min-h-[600px] xl:pl-20">
+                                <Lanyard />
                             </div>
                         </div>
 
