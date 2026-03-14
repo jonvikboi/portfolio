@@ -30,6 +30,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
