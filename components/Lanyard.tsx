@@ -16,6 +16,10 @@ const userProfile = '/dev.jpeg';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
+// Preload assets for faster mounting
+useGLTF.preload(cardGLB);
+useTexture.preload(lanyardTexture);
+
 export default function Lanyard({ position = [0, 0, 12], gravity = [0, -40, 0], fov = 20, transparent = true }) {
   const [isMobile, setIsMobile] = useState(false);
 

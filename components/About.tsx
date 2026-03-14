@@ -1,14 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lanyard from "./Lanyard";
+import { WordPullUp } from "./ui/word-pull-up";
 
 export default function About() {
     const containerRef = useRef<HTMLDivElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
+    const lanyardContainerRef = useRef<HTMLDivElement>(null);
+    const isLanyardInView = useInView(lanyardContainerRef, { once: true, margin: "800px" });
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -57,8 +61,11 @@ export default function About() {
                             </div>
 
                             {/* PORTRAIT: 3D Interactable Lanyard */}
-                            <div className="fade-up flex justify-center w-full min-h-[500px] md:min-h-[600px] xl:pl-20">
-                                <Lanyard />
+                            <div 
+                                ref={lanyardContainerRef}
+                                className="fade-up flex justify-center w-full min-h-[500px] md:min-h-[600px] xl:pl-20"
+                            >
+                                {isLanyardInView && <Lanyard />}
                             </div>
                         </div>
 
@@ -67,18 +74,54 @@ export default function About() {
 
                             {/* The Hook */}
                             <div className="fade-up space-y-10 md:space-y-12">
-                                <p className="text-3xl md:text-5xl lg:text-6xl font-outfit font-black text-foreground leading-[1.1] tracking-tight">
-                                    I don’t just build stuff,<br />
-                                    <span className="text-primary italic">I engineer experiences.</span>
-                                </p>
+                                <div className="flex flex-col text-left">
+                                    <WordPullUp
+                                        words="I don’t just build stuff,"
+                                        className="text-3xl md:text-5xl lg:text-6xl font-outfit font-black text-foreground leading-[1.1] tracking-tight text-left block"
+                                        framerProps={{
+                                            hidden: { y: 20, opacity: 0 },
+                                            show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100, damping: 20 } }
+                                        }}
+                                    />
+                                    <WordPullUp
+                                        words="I engineer experiences."
+                                        className="text-3xl md:text-5xl lg:text-6xl font-outfit font-black text-primary italic leading-[1.1] tracking-tight text-left block mt-1"
+                                        wrapperFramerProps={{
+                                          hidden: { opacity: 0 },
+                                          show: {
+                                            opacity: 1,
+                                            transition: {
+                                              staggerChildren: 0.1,
+                                              delayChildren: 0.5 // Faster transition
+                                            },
+                                          },
+                                        }}
+                                        framerProps={{
+                                            hidden: { y: 20, opacity: 0 },
+                                            show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 150, damping: 25 } }
+                                        }}
+                                    />
+                                </div>
 
                                 <div className="grid md:grid-cols-2 gap-8 md:gap-16 text-base md:text-xl text-foreground/60 font-inter font-light leading-relaxed">
-                                    <p>
-                                        I’m a B.Tech student who lives and breathes <span className="text-foreground font-medium">systems thinking</span>, performance, and cinematic frontend feels. I spend my time in places where tech depth and visual appeal collide.
-                                    </p>
-                                    <p>
-                                        My roots are in <span className="text-foreground font-medium">AIML, OS, and full-stack</span> development. I’m all about creating high-performance environments using modern React ecosystems and solid design logic.
-                                    </p>
+                                    <WordPullUp
+                                        words="I’m a B.Tech student who lives and breathes systems thinking, performance, and cinematic frontend feels. I spend my time in places where tech depth and visual appeal collide."
+                                        delayMultiple={0}
+                                        className="text-left text-base md:text-xl font-inter font-light leading-relaxed text-foreground/60"
+                                        wrapperFramerProps={{
+                                            hidden: { opacity: 0 },
+                                            show: { opacity: 1, transition: { staggerChildren: 0.02 } }
+                                        }}
+                                    />
+                                    <WordPullUp
+                                        words="My roots are in AIML, OS, and full-stack development. I’m all about creating high-performance environments using modern React ecosystems and solid design logic."
+                                        delayMultiple={0}
+                                        className="text-left text-base md:text-xl font-inter font-light leading-relaxed text-foreground/60"
+                                        wrapperFramerProps={{
+                                            hidden: { opacity: 0 },
+                                            show: { opacity: 1, transition: { staggerChildren: 0.02 } }
+                                        }}
+                                    />
                                 </div>
                             </div>
 
