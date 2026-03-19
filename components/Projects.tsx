@@ -31,14 +31,15 @@ const REPO_IMAGES: Record<string, string> = {
     "Video_Game_Photo_Gallery": "/game.png",
     "restaurant-delivery-angular": "/restaurant.png",
     "recipe-website": "/recipel.png",
-    "mindsake-website": "/mindsake.png"
+    "mindsake-website": "/mindsake.png",
+    "dbms-project": "/cart.png"
 };
 
 const REPO_LIVE_URLS: Record<string, string> = {
     "UI-UX-Movie-Info-Website": "https://jonvikboi.github.io/UI-UX-Movie-Info-Website/",
     "Video_Game_Photo_Gallery": "https://gameography.live",
     "restaurant-delivery-angular": "https://restaurant-delivery-angular.vercel.app",
-    "recipe-website": "https://recipe-website-peach.vercel.app",
+    "recipe-website": "https://recipel.vercel.app",
     "mindsake-website": "https://mindsake-website.vercel.app",
     "dbms-project": "https://cart-managment-system.vercel.app/"
 };
