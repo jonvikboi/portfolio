@@ -114,10 +114,10 @@ export default function Contact() {
 
                     <div ref={quoteRef} className="mt-12 md:mt-24">
                         <p className="text-lg md:text-3xl font-outfit font-light italic tracking-widest text-foreground/30 text-center">
-                            "Choices have consequences."
+                            "The only way to do great work is to love what you do."
                         </p>
                         <p className="mt-6 text-[10px] uppercase tracking-[0.8em] text-primary/60 font-black">
-                            — Ghost
+                            — Steve Jobs
                         </p>
                     </div>
 
